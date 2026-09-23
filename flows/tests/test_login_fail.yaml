@@ -1,0 +1,13 @@
+appId: com.swaglabsmobileapp
+---
+- launchApp:
+    clearState: true
+
+- runFlow:
+    file: "../commons/Login.yaml"
+    env: 
+        USERNAME: "problem_user"
+        PASSWORD: "secret_sauce"
+- takeScreenshot:
+    path: evidencias/login_fail
+- assertVisible: "Username and password do not match any user in this service."

@@ -1,0 +1,9 @@
+appId: com.swaglabsmobileapp
+---
+- launchApp:
+    clearState: true
+- tapOn: "Username"
+- inputText: ${USERNAME}
+- tapOn: "Password"
+- inputText: ${PASSWORD}
+- tapOn: "test-LOGIN"

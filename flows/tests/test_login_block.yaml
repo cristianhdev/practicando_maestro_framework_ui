@@ -1,0 +1,15 @@
+appId: com.swaglabsmobileapp
+---
+- launchApp:
+    clearState: true
+
+- runFlow:
+    file: "../commons/Login.yaml"
+    env: 
+        USERNAME: "locked_out_user"
+        PASSWORD: "secret_sauce"
+- swipe:
+          direction: UP
+- assertVisible: "Sorry, this user has been locked out."
+- takeScreenshot:
+    path: evidencias/login_user_block

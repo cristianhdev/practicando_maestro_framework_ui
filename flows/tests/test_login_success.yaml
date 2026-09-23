@@ -1,0 +1,14 @@
+appId: com.swaglabsmobileapp
+---
+- launchApp:
+    clearState: true
+
+- runFlow:
+    file: "../commons/Login.yaml"
+    env:
+        USERNAME: "standard_user"
+        PASSWORD: "secret_sauce"
+
+- assertVisible: "PRODUCTS"
+- takeScreenshot:
+    path: evidencias/login_exitoso
