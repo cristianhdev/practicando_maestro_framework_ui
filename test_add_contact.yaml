@@ -1,0 +1,30 @@
+appId: com.google.android.contacts
+---
+- launchApp:
+    clearState: true
+
+
+- repeat:
+    times: 4
+    commands:
+    - tapOn: "Create contact"
+    - takeScreenshot:
+        path: "home_list"
+    - tapOn: "First name"
+    - inputText: "Test"
+    - pressKey: enter
+    - tapOn: "Last name"
+    - inputText: ${faker.name().lastName()}
+    - pressKey: enter
+    - tapOn: "Company"
+    - inputText: "Casa QA"
+    - swipe:
+        direction: UP
+    - tapOn: "+1"
+    - inputText: ${faker.phoneNumber().cellPhone()}
+    - tapOn: "Save"
+    - takeScreenshot:
+        path: "list_user_create"
+    - waitForAnimationToEnd
+    - back
+- stopRecording

@@ -1,0 +1,17 @@
+appId: com.swaglabsmobileapp
+---
+- launchApp:
+    clearState: true
+
+- runFlow:
+    file: "../commons/Login.yaml"
+    env: 
+        USERNAME: "standard_user"
+        PASSWORD: "secret_sauce"
+
+
+- assertVisible: "PRODUCTS"
+- tapOn: "test-Menu"
+- tapOn: "LOGOUT"
+- assertVisible: "The currently accepted usernames for this application are (tap to autofill):"
+- stopRecording

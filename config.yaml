@@ -8,3 +8,5 @@ platform:
 
 flows:
   - flows/tests/*
+
+# testOutputDir: ./evidencias

@@ -1,0 +1,15 @@
+appId: com.google.android.contacts
+---
+- launchApp:
+    clearState: true
+
+- tapOn: "Search contacts"
+- inputText: "Test"
+- tapOn:
+    text: ".*Test.*"
+    index: 2
+- assertVisible:
+    text: ".*Test.*"
+
+- tapOn: "Navigate up"
+

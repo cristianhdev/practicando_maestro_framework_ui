@@ -1,0 +1,17 @@
+appId: com.google.android.contacts
+---
+- launchApp:
+    clearState: true
+
+
+- repeat:
+    while:
+      visible: "^Test.*"
+    commands:
+      - tapOn:
+          text: "^Test.*"
+      - tapOn: "Edit contact"
+      - waitForAnimationToEnd
+      - tapOn: "More options for contact menu"
+      - tapOn: "Delete"
+      - tapOn: "Delete"
