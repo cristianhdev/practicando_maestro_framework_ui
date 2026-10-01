@@ -1,0 +1,19 @@
+appId: com.google.android.contacts
+tags:
+ - smoke
+---
+- launchApp:
+    clearState: true
+
+
+- repeat:
+    while:
+      visible: "^Test.*"
+    commands:
+      - tapOn:
+          text: "^Test.*"
+      - tapOn: ${output.contact_remove.BtnEdit}
+      - waitForAnimationToEnd
+      - tapOn: ${output.contact_remove.BtnMoreOptions}
+      - tapOn: ${output.contact_remove.BtnDelete}
+      - tapOn: ${output.contact_remove.BtnDelete}

@@ -1,4 +1,5 @@
 appId: com.swaglabsmobileapp
+
 ---
 - launchApp:
     clearState: true

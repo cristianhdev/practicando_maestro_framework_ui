@@ -1,0 +1,17 @@
+appId: com.google.android.contacts
+tags:
+ - regression
+---
+- launchApp:
+    clearState: true
+
+- tapOn: "Search contacts"
+- inputText: "Test"
+
+- runFlow:
+    when:
+      visible: ".*Test.*"
+    commands:
+      - tapOn:
+          text: ".*Test.*"
+          index: 0

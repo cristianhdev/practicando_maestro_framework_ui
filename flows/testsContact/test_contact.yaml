@@ -1,0 +1,20 @@
+appId: com.google.android.contacts
+
+---
+- launchApp:
+    clearState: true
+
+#Load Page Elements
+- runScript: ./views/Contact_create.js
+- runScript: ./views/Contact_remove.js
+
+
+#Run test
+- runFlow:
+        file: "./test_add_contact.yaml"
+
+- runFlow:
+        file: "./test_find_contanct.yaml"
+
+- runFlow:
+        file: "./test_delete_contatcs.yaml"
