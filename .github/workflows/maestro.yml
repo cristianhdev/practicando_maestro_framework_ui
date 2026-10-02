@@ -12,14 +12,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repository
-        uses: actions/checkout@v6
-        
+        uses: actions/checkout@v4
+
       - name: Install Maestro
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
+          echo "$HOME/.maestro/bin" >> "$GITHUB_PATH"
+
+      - name: Check Maestro version
+        run: maestro --version
 
       - name: Run Smoke Tests
         run: |
-          maestro test test_add_contac.yaml
+          maestro test test_add_contact.yaml
