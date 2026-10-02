@@ -23,6 +23,11 @@ jobs:
       - name: Check Maestro version
         run: maestro --version
 
+      - name: Show project structure
+        run: |
+            pwd
+            find . -maxdepth 4 -type f | sort
+
       - name: Run Smoke Tests
         run: |
-          maestro test test_add_contact.yaml
+          maestro test flows/test_add_contact.yaml
